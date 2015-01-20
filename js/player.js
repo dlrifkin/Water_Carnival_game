@@ -9,7 +9,7 @@ function Player(broom) {
   this.name = 'player';
   this.dir = 'stationary';
 
-  this.sprite = 'url("http://www.nndb.com/people/540/000024468/r-kelly.jpg")';
+  // this.sprite = 'url("http://www.nndb.com/people/540/000024468/r-kelly.jpg")';
    this.initDisplay()
 }
 

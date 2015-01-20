@@ -3,13 +3,13 @@ function Game() {
   this.player1 = new Player(this.$broom);
   this.startTime = new Date();
   this.stream = [];
-  // this.target = new Target(this.$broom)
+  this.target = new Target(this.$broom)
 }
 
 Game.prototype.loop = function() {
   this.player1.move();
   // this.target.move();
-  // this.stream.move();
+  this.stream.move();
   player1 = this.player1;
   this.updateTimer();
   // this.updateScore()
