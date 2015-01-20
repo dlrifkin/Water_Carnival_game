@@ -8,17 +8,21 @@ function Game() {
 }
 
 Game.prototype.loop = function() {
-  this.player1.move();
+  // do {
+
+    this.player1.move();
   // this.target.move();
 
-  this.stream = _(this.stream).reject(function(drop) { return drop.isLanded });
-  this.stream.forEach(function (drops) {
-    drops.move();
+    this.stream = _(this.stream).reject(function(drop) { return drop.isLanded });
+    this.stream.forEach(function (drops) {
+      drops.move();
     // console.log(drops);
-  });
-  player1 = this.player1;
-  this.updateTimer();
-  // this.updateScore()
+    });
+    // player1 = this.player1;
+    this.updateTimer();
+    this.updateScore()
+  // }
+  // while ((Date.now() - this.startTime) / 1000) < 60);
 }
 
 Game.prototype.updateTimer = function() {
@@ -31,15 +35,29 @@ Game.prototype.startStream = function() {
 
 }
 
-
-// Also need Game.updateScore
+Game.prototype.updateScore = function() {
+  $('#scoreboard').html(this.player1.score);
+}
 
 
 
 
 $(document).ready(function() {
   game = new Game();
-  setInterval(function() {game.loop(); }, 20);
+
+  var startTime = new Date().getTime();
+
+  // Fixed timer... conditional was backwards
+
+  var myVar = setInterval(function() {
+  if (new Date().getTime() - startTime  > 10000) {
+      clearInterval(myVar);
+      return;
+    }
+      game.loop();
+  }, 20);
+
+
 
   ['left', 'right', 'up', 'down'].forEach(function(direction) {
     Mousetrap.bind(direction, function() {
