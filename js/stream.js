@@ -1,18 +1,34 @@
-function Stream(broom) {
-  this.$broom = broom;
-  this.x = this.$broom.width() /2;
-  this.y = this.$broom.height() - 50;
+function Drops(player) {
+  this.$player = player;
+  this.$broom = player.$broom;
+  this.aim_x = this.$player.x;
+  this.aim_y = this.$player.y;
+  this.x = this.$player.$broom.width() /2;
+  this.y = this.$player.$broom.height() - 50;
   this.width = 5;
   this.height = 5;
   this.speed = 3;
-  this.name = 'stream'
-
+  this.name = 'drops';
   this.initDisplay()
 }
 
-['initDisplay', 'updateDisplay', 'move', 'inbounds', 'destroy'].forEach(function (func) {
-Stream.prototype[func] = Player.prototype[func];
+['initDisplay', 'updateDisplay', 'inbounds', 'destroy'].forEach(function (func) {
+Drops.prototype[func] = Player.prototype[func];
 });
+
+Drops.prototype.move = function() {
+  var easingAmount = 0.10
+  var xDistance = this.aim_x - this.x;
+  var yDistance = this.aim_y - this.y;
+  var distance = Math.sqrt(xDistance * xDistance + yDistance * yDistance);
+  if (distance > 1) {
+    this.x += xDistance * easingAmount;
+    this.y += yDistance * easingAmount;
+  }else{
+    this.destroy()
+  }
+  this.updateDisplay();
+}
 
 // moveTo function(player x, player y)
 // decay function - destroy when hits destination

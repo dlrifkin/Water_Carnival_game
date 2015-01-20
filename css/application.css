@@ -22,3 +22,10 @@
   height: 4px;
   background: url('http://www.nndb.com/people/540/000024468/r-kelly.jpg');
 }
+
+.drops {
+  background-color: papayawhip;
+  height: 10px;
+  width: 5px;
+  position: absolute;
+}
