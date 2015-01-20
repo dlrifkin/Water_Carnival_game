@@ -8,7 +8,7 @@ function Player(broom) {
   this.speed = 3;
   this.name = 'player';
   this.dir = 'stationary';
-
+  this.score = 0;
   // this.sprite = 'url("http://www.nndb.com/people/540/000024468/r-kelly.jpg")';
    this.initDisplay()
 }
