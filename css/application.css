@@ -2,17 +2,57 @@
   width: 100%;
 }
 #broom {
-  padding: 20px;
-  width: 600px;
-  height: 600px;
+/*  padding: 20px;*/
+  width: 480px;
+  height: 640px;
   border: 2px double #0f0f0f;
+  background: url('https://c1.staticflickr.com/5/4029/4280587485_aba01794df_z.jpg?zz=1');
 }
 
+#scoreboard {
+  position: relative;
+  float: right;
+  top: 10px;
+  right: 10px;
+  height: 30px;
+  width: 70px;
+  color: red;
+  font-size: 4em;
+  font: impact;
+  text-align: left;
+  /*background-color: #ffffff;*/
+}
+
+
+/*#broom img {
+  width: 100%;
+  position: absolute;
+  bottom: 100px;
+  padding: 0;
+
+}*/
 .target {
   position: absolute;
-  width: 40px;
-  height: 40px;
-  background-color: #222222;
+  top:  300px;
+  left: 300px;
+  width: 20px;
+  height: 20px;
+
+  border: 5px double rgba(219, 112, 147, 0.3);
+  border-radius: 15px;
+
+}
+#timer {
+    position: relative;
+  float: left;
+  top: 10px;
+  left: 10px;
+  height: 30px;
+  width: 70px;
+  color: red;
+  font-size: 4em;
+  font: impact;
+  text-align: left;
 
 }
 
@@ -21,4 +61,14 @@
   width: 4px;
   height: 4px;
   background: url('http://www.nndb.com/people/540/000024468/r-kelly.jpg');
+}
+
+.drops {
+  background-color: papayawhip;
+  height: 10px;
+  width: 3px;
+  position: absolute;
+  border-radius: 15px;
+  border: 2px solid papayawhip;
+
 }
