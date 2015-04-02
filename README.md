@@ -1,2 +1,2 @@
 # Water_Carnival_game
-A game.
+An immature game that ventures into Object-oriented Javascript.
